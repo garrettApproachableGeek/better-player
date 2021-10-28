@@ -666,7 +666,8 @@ class _BetterPlayerCupertinoControlsState
     bool isFinished = false;
 
     if (_latestValue?.position != null && _latestValue?.duration != null) {
-      isFinished = _latestValue!.position >= _latestValue!.duration!;
+      isFinished =
+          _latestValue!.position.inSeconds >= _latestValue!.duration!.inSeconds;
     }
     setState(() {
       if (_controller!.value.isPlaying) {
